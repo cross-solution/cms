@@ -6,11 +6,11 @@ module.exports = {
     console.log(ctx.request.body);
     try {
       var info = await strapi.plugins.email.services.email.send({
-              to: 'j.perfectsolution55@gmail.com', // Please type your personal or business email
-              from: body.name + ` <${body.email}>`,
+              to: 'bleek@cross-solution.de', // Well make this configurable via .env
+              from: 'bleek@cross-solution.de', // Well make this configurable via .env
               replyTo: 'no-reply@me.com',
               subject: 'Hello',
-              text: `This is ${body.name}`,
+              text: `This is ${body.name}. Mail was sent by <${body.email}>`,
               html: body.message
             });
       console.log(info);
